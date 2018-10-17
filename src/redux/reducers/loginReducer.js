@@ -12,6 +12,8 @@ export default (state = initialState, action) => {
             return { ...state, isLoading: false, data: action.payload };
         case "LOGIN_FAILURE":
             return { ...state, isLoading: false, isError: true };
+        case "LOGIN_UPDATE":
+            return { ...state, isLoading: false, data: action.payload };
         default:
             return state
     }

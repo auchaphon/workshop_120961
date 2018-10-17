@@ -37,11 +37,13 @@ class Login extends Component {
             password: this.password
         }
         this.props.setLogin(data);
+        console.log(data);
         // this.props.navigation.push('Home');
         // this.props.navigation.navigate('Home')
     }
 
     componentWillReceiveProps(nextProps) {
+        console.log(nextProps);
         if (nextProps.loginReducer.data.length != 0) {
             this.props.navigation.push('Home')
         }

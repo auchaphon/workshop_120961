@@ -18,6 +18,12 @@ export const setLogin = (data) => {
     }
 }
 
+export const updateUser = (data) => {
+    return (dispatch) => {
+        dispatch(setAction("LOGIN_UPDATE", data));
+    }
+}
+
 
 export const getUserProfile = (data) => {
     return new Promise((resolve, reject) => {
@@ -29,7 +35,7 @@ export const getUserProfile = (data) => {
 
 function getUserProfileApi(data) {
     if (data.username == "Auchaphon" && data.password == "P@ssw0rd") {
-        return { data: { username: "auchaphon", email: 'auchaphon@gmail.com', telephone: "0982856576" } }
+        return { username: "Auchaphon", email: 'auchaphon@gmail.com', telephone: "0982856576" }
     } else {
         return "";
     }

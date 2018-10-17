@@ -5,6 +5,7 @@ import store from './src/redux/configureStore'
 import Login from './src/Login';
 import Home from './src/Home';
 import Register from './src/Register'
+import EditProfile from './src/EditProfile'
 
 // import Login from './src/screens/Login';
 
@@ -13,7 +14,7 @@ import Register from './src/Register'
 console.disableYellowBox = true;
 const ScreenStackNavigator = createStackNavigator({
   Login: Login,
-  Home:Home
+  Home: Home
 },
   {
     headerMode: "none",
@@ -22,7 +23,8 @@ const ScreenStackNavigator = createStackNavigator({
 
 const AppStackNavigator = createStackNavigator({
   MainPage: ScreenStackNavigator,
-  Register: Register
+  Register: Register,
+  EditProfile: EditProfile
 }, {
     mode: 'modal',
     headerMode: 'none',
@@ -34,7 +36,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <AppStackNavigator />
-     </Provider>
+      </Provider>
     );
   }
 }
