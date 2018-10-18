@@ -1,3 +1,4 @@
+import { fetchData } from './apiFetching'
 export const setAction = (actionName = '', payload = []) => {
     return {
         type: actionName,
@@ -14,6 +15,19 @@ export const setLogin = (data) => {
             })
             .catch(error => {
                 dispatch(setAction("LOGIN_FAILURE"))
+            })
+    }
+}
+
+export const getFetchData = () => {
+    return (dispatch) => {
+        dispatch(setAction("FETCH_LOADING"));
+        fetchData()
+            .then(result => {
+                dispatch(setAction("FETCH_SUCCESS", result));
+            })
+            .catch(error => {
+                dispatch(setAction("FETCH_FAILURE"))
             })
     }
 }

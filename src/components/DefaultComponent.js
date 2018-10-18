@@ -4,7 +4,7 @@ import { Text, View,TouchableOpacity } from 'react-native'
 export class MyText extends Component {
     render() {
         return (
-            <Text {...this.props} style={[styles.text, this.props.style]}>
+            <Text  {...this.props} style={[styles.text, this.props.style]}>
                 {this.props.children} </Text>
         );
     }
