@@ -54,7 +54,8 @@ class Fetching extends Component {
       <View style={{ flex: 1, padding: Lib.point(20), backgroundColor: '#333' }}>
         {
           (fetchReducer.isLoading) ?
-            <View style={{ alignItems: 'center' }}><MyText> Loading...<ActivityIndicator color={'lawngreen'} /> </MyText></View>
+            <View style={{ alignItems: 'center' }}><MyText> Loading...
+              <ActivityIndicator color={'lawngreen'} /> </MyText></View>
             : <FlatList data={fetchReducer.data}
               renderItem={this._renderItem}
               refreshControl={

@@ -31,6 +31,9 @@
 # Performance improve
  - purecomponent or shoundComponent
 
+ #Api user
+ - https://api.github.com/repositories
+
  shouldComponentUpdate(nextProps, nextState) {
     if(this.props.firstProp === nextProps. firstProp &&
        this.props.secondProp === nextProps.secondProp) {
