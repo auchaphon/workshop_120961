@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component,PureComponent } from 'react'
 import { Text, View, ActivityIndicator, FlatList, Image, RefreshControl } from 'react-native'
 import Lib from '../src/lib/util'
 import { getFetchData } from './redux/actions/index'
@@ -29,14 +29,15 @@ class Fetching extends Component {
     this.props.getFetchData();
   }
 
+
   _renderItem = ({ item, index }) => {
     const { owner, full_name, html_url } = item;
-    return <View style={{ marginVertical: Lib.point(5), height: Lib.point(80), backgroundColor: '#fff', borderColor: '#ababab', borderWidth: 0.5 }}>
+    return <View style={{ marginVertical: Lib.point(5), height: Lib.point(80), backgroundColor: '#cbcbcb', borderColor: '#ababab', borderWidth: 0.5 }}>
       <View style={{ flexDirection: 'row' }}>
         <Image source={{ uri: owner.avatar_url }} style={{ height: Lib.point(80), width: Lib.point(80) }} resizeMode={'contain'} />
         <View style={{ flexDirection: 'column', flex: 1, paddingHorizontal: Lib.point(10) }}>
           <MyText numberOfLines={2} style={{ fontSize: Lib.font(20), color: "#04f" }}>{full_name}</MyText>
-          <MyButton style={{ borderColor: '#333', width: Lib.point(150), padding: Lib.point(2), justifyContent: 'center', alignItems: 'center' }}>
+          <MyButton onPress={() => this.setState({isRefreshing:false})}  style={{ borderColor: '#333', width: Lib.point(150), padding: Lib.point(2), justifyContent: 'center', alignItems: 'center' }}>
             <MyText style={{ fontSize: Lib.font(14), color: '#333' }}>{'go to repository'}</MyText>
           </MyButton>
         </View>
@@ -49,6 +50,7 @@ class Fetching extends Component {
   }
 
   render() {
+    console.log('renderagain');
     const { fetchReducer } = this.props;
     return (
       <View style={{ flex: 1, padding: Lib.point(20), backgroundColor: '#333' }}>

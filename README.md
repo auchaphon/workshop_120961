@@ -27,6 +27,11 @@
     - npm install --save redux
     - npm install --save react-redux
     - npm install --save redux-thunk
+    - npm install --save native-base
+
+    - Icon ref https://oblador.github.io/react-native-vector-icons/
+
+
 
 # Performance improve
  - purecomponent or shoundComponent

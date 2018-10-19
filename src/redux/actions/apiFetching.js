@@ -8,7 +8,7 @@ export const fetchData = () => {
 
 
 async function fetchDataApi() {
-    let url = "c"
+    let url = "https://api.github.com/repositories"
     const result  = fetch(url, {
         method: 'GET',
         headers: {

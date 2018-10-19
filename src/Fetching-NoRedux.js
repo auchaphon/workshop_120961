@@ -29,19 +29,6 @@ export class Fetching extends Component {
         });
     }
 
-    componentDidMount(){
-
-    }
-
-
-    componentDidUpdate(){
-
-    }
-
-    componentWillUnmount(){
-        
-    }
-
     _renderItem = ({ item, index }) => {
         const { owner, full_name, html_url } = item;
         return <View style={{ marginVertical: Lib.point(5), height: Lib.point(80), backgroundColor: '#fff', borderColor: '#ababab', borderWidth: 0.5 }}>

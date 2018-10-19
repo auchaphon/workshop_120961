@@ -8,6 +8,7 @@ import Register from './src/Register'
 import EditProfile from './src/EditProfile'
 import Fetching from './src/Fetching-NoRedux';
 import FetchingRedux from './src/Fetching-Redux';
+import HomeBase from './src/HomeBase'
 
 // import Login from './src/screens/Login';
 
@@ -17,11 +18,12 @@ console.disableYellowBox = true;
 const ScreenStackNavigator = createStackNavigator({
   Login: Login,
   Home: Home,
-  FetchingRedux: FetchingRedux
+  FetchingRedux: FetchingRedux,
+  HomeBase: HomeBase
 },
   {
     headerMode: "none",
-    initialRouteName: "FetchingRedux",
+    initialRouteName: "HomeBase",
   });
 
 const AppStackNavigator = createStackNavigator({
